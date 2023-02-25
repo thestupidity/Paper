@@ -114,17 +114,17 @@ index 06e1774dfbb667aca69bc30c9675ed472cb5728c..1d5bc86516df3781aea894c3afd34042
  
      public static SurfaceRules.RuleSource end() {
 diff --git a/src/main/java/net/minecraft/server/Bootstrap.java b/src/main/java/net/minecraft/server/Bootstrap.java
-index c887d34171f89c731d76c4ca92c70be2b1edc1e6..df6752b5c77bc88a4fcf1ffe918b24d41cd30ad4 100644
+index 19f50b788f922aa6bfedc4693b5cc5eda0b89cb6..5b899282b7181a25433dfd2258d442e5d5d4d1a3 100644
 --- a/src/main/java/net/minecraft/server/Bootstrap.java
 +++ b/src/main/java/net/minecraft/server/Bootstrap.java
-@@ -78,6 +78,7 @@ public class Bootstrap {
+@@ -79,6 +79,7 @@ public class Bootstrap {
                      CauldronInteraction.bootStrap();
                      // Paper start
                      BuiltInRegistries.bootStrap(() -> {
 +                        net.minecraft.core.Registry.register(net.minecraft.core.registries.BuiltInRegistries.MATERIAL_CONDITION, new net.minecraft.resources.ResourceLocation("paper", "bedrock_condition_source"), net.minecraft.data.worldgen.SurfaceRuleData.PaperBedrockConditionSource.CODEC.codec());
-                         io.papermc.paper.plugin.entrypoint.LaunchEntryPointHandler.enterBootstrappers(); // Paper - Entrypoint for bootstrapping
                      });
                      // Paper end
+                     CreativeModeTabs.validate();
 diff --git a/src/main/java/net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator.java b/src/main/java/net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator.java
 index 902156477bdfc9917105f1229f760c26e5af302a..58609a0911c4e32b6f80f050cd3d23f70ad75b1b 100644
 --- a/src/main/java/net/minecraft/world/level/levelgen/NoiseBasedChunkGenerator.java
